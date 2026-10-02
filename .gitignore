@@ -9,7 +9,7 @@ pycache/
 echo "# geeks_69_2_4_mouth" >> README.md
 git init
 git add README.md
-git commit -m "first commit"
+git commit -m "homework"
 git branch -M main
 git remote add origin https://github.com/Onesim20/geeks_69_2_4_mouth.git
 git push -u origin main
