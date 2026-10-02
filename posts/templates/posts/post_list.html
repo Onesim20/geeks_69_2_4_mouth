@@ -1,0 +1,9 @@
+<h1>Все посты</h1>
+
+{% for post in posts %}
+  <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
+  <p>{{ post.description }}</p>
+  <p>Активен: {{ post.is_active }}</p>
+{% empty %}
+  <p>Постов пока нет.</p>
+{% endfor %}
