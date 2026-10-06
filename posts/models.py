@@ -6,7 +6,6 @@ class Post(models.Model):
     description = models.TextField()
     is_active = models.BooleanField(default=True)
 
-    def str(self):
+    def __str__(self):
         return self.title
-
 

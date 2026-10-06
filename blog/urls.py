@@ -16,19 +16,24 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from posts.views import hello
-from posts.views import time
-from posts.views import age
-from posts.views import PostListView, PostDetailView
-
+from posts.views import post_detail, post_list
+from posts.hw1_views import age, hello, hello_post, time
+from posts.hw2_views import ActivePostDetailView, ActivePostListView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path("hello", hello),
-    path("now", time),
-    path("age", age),
-    path('', PostListView.as_view(), name='post_list'),
-    path('<int:pk>/', PostDetailView.as_view(), name='post_detail'),
-    path('hello/', hello, name='hello'),
-]
+    path("admin/", admin.site.urls),
 
+
+    path("", post_list, name="post_list"),
+    path("post/<int:pk>", post_detail, name="post_detail"),
+
+  
+    path("hello", hello, name="hello"),
+    path("hello-post", hello_post, name="hello_post"),
+    path("now", time, name="now"),
+    path("age", age, name="age"),
+
+
+    path("active/", ActivePostListView.as_view(), name="active_post_list"),
+    path("active/<int:pk>/", ActivePostDetailView.as_view(), name="active_post_detail"),
+]

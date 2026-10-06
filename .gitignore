@@ -9,7 +9,13 @@ pycache/
 echo "# geeks_69_2_4_mouth" >> README.md
 # git init
 # git add README.md
-# git commit -m "homewor"
+# git commit -m "homework2"
 # git branch -M main
 # git remote add origin https://github.com/Onesim20/geeks_69_2_4_mouth.git
 # git push -u origin main
+
+# cd ~
+# git clone https://github.com/Mixa101/B69-2 teacher_repo
+# cd ~/geeks4
+# cp -r ~/teacher_repo/templates ./templates
+# rm -r posts/templates
