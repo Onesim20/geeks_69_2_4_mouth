@@ -19,6 +19,21 @@
         <div class="mb-4">
             <h1 class="display-5 fw-bold mb-3">{{ post.title }}</h1>
             <hr>
+                   
+        <div class="d-flex align-items-center gap-3 mb-4">
+            {% if post.is_active %}
+                <span class="badge bg-success">Активен</span>
+            {% else %}
+                <span class="badge bg-secondary">Неактивен</span>
+            {% endif %}
+
+            <form method="post" action="{% url 'toggle_post_active' post.pk %}">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-sm {% if post.is_active %}btn-outline-danger{% else %}btn-outline-success{% endif %}">
+                    {% if post.is_active %}Сделать неактивным{% else %}Сделать активным{% endif %}
+                </button>
+            </form>
+        </div>
         </div>
 
         <!-- Изображение или заглушка -->

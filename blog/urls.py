@@ -14,26 +14,32 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf import settings
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
-from posts.views import post_detail, post_list
+from posts.views import create_post, post_detail, post_list
 from posts.hw1_views import age, hello, hello_post, time
 from posts.hw2_views import ActivePostDetailView, ActivePostListView
-
+from posts.hw3_views import toggle_post_active
 urlpatterns = [
     path("admin/", admin.site.urls),
 
 
     path("", post_list, name="post_list"),
+    path("post/create/", create_post, name="create_post"),
     path("post/<int:pk>", post_detail, name="post_detail"),
 
-  
     path("hello", hello, name="hello"),
     path("hello-post", hello_post, name="hello_post"),
     path("now", time, name="now"),
     path("age", age, name="age"),
 
-
     path("active/", ActivePostListView.as_view(), name="active_post_list"),
     path("active/<int:pk>/", ActivePostDetailView.as_view(), name="active_post_detail"),
+    path("toggle-post-active/<int:pk>/", toggle_post_active, name="toggle_post_active"),
 ]
+
+#
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

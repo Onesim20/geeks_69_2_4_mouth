@@ -7,9 +7,10 @@ pycache/
 *.sqlite3
 .env
 echo "# geeks_69_2_4_mouth" >> README.md
+media/
 # git init
 # git add README.md
-# git commit -m "homework2"
+# git commit -m "homework3"
 # git branch -M main
 # git remote add origin https://github.com/Onesim20/geeks_69_2_4_mouth.git
 # git push -u origin main
@@ -19,3 +20,9 @@ echo "# geeks_69_2_4_mouth" >> README.md
 # cd ~/geeks4
 # cp -r ~/teacher_repo/templates ./templates
 # rm -r posts/templates
+# cd ~/geeks4
+# cp ~/teacher_repo/templates/posts/list.html templates/posts/list.html
+# cp ~/teacher_repo/templates/posts/create.html templates/posts/create.html
+# cp ~/teacher_repo/templates/posts/list.html templates/posts/list.html
+# cp ~/teacher_repo/templates/posts/create.html templates/posts/create.html
+# ls templates/posts
