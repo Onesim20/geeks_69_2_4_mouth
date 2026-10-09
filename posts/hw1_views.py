@@ -13,7 +13,7 @@ def hello(request):
 
 
 def hello_post(request):
-    # вывод всех полей модели Post: title, description, is_active
+
     post = Post.objects.first()
     if post is None:
         return HttpResponse("Постов пока нет")
