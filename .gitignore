@@ -10,7 +10,7 @@ echo "# geeks_69_2_4_mouth" >> README.md
 media/
 # git init
 # git add README.md
-# git commit -m "homework3"
+# git commit -m "homework4"
 # git branch -M main
 # git remote add origin https://github.com/Onesim20/geeks_69_2_4_mouth.git
 # git push -u origin main
@@ -26,3 +26,8 @@ media/
 # cp ~/teacher_repo/templates/posts/list.html templates/posts/list.html
 # cp ~/teacher_repo/templates/posts/create.html templates/posts/create.html
 # ls templates/posts
+
+# git add -A
+# git status
+# git commit -m "HW3: toggle is_active from post detail"
+# git push
