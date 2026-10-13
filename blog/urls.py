@@ -22,9 +22,10 @@ from posts.views import create_post, post_detail, post_list
 from posts.hw1_views import age, hello, hello_post, time
 from posts.hw2_views import ActivePostDetailView, ActivePostListView
 from posts.hw3_views import toggle_post_active
+from posts.hw4_views import create_category
+
 urlpatterns = [
     path("admin/", admin.site.urls),
-
 
     path("", post_list, name="post_list"),
     path("post/create/", create_post, name="create_post"),
@@ -37,9 +38,9 @@ urlpatterns = [
 
     path("active/", ActivePostListView.as_view(), name="active_post_list"),
     path("active/<int:pk>/", ActivePostDetailView.as_view(), name="active_post_detail"),
-    path("toggle-post-active/<int:pk>/", toggle_post_active, name="toggle_post_active"),
-]
 
-#
+    path("toggle-post-active/<int:pk>/", toggle_post_active, name="toggle_post_active"),
+    path("category/create/", create_category, name="create_category"),
+]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

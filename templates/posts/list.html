@@ -67,6 +67,8 @@
                 
            
                 <h5 class="card-title">{{ post.title }}</h5>
+                                <!-- ДЗ 4: категория поста -->
+                {% if post.category %}<span class="badge bg-info text-dark align-self-start mb-2">{{ post.category }}</span>{% endif %}
                 <p class="card-text text-muted flex-grow-1">
                     {{ post.description|truncatewords:20 }}
                 </p>

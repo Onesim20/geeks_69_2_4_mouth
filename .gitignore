@@ -29,5 +29,7 @@ media/
 
 # git add -A
 # git status
-# git commit -m "HW3: toggle is_active from post detail"
+# git commit -m "HW4"
+# git push
+# git pull --no-rebase --no-edit -X ours
 # git push
