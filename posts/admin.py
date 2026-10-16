@@ -5,7 +5,7 @@ from .models import Category, Post
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
-    list_display = ("title", "category", "is_active")
+    list_display = ("title", "category", "user", "is_active")
     list_filter = ("is_active", "category")
 
 
