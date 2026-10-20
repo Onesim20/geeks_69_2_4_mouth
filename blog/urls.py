@@ -10,6 +10,13 @@ from posts.hw2_views import ActivePostDetailView, ActivePostListView
 from posts.hw3_views import toggle_post_active
 from posts.hw4_views import create_category
 from posts.hw5_views import my_posts
+from posts.lesson7_views import (
+    PostCreateView,
+    PostDeleteView,
+    PostDetailView,
+    PostListView,
+    UpdatePostView,
+)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -36,6 +43,13 @@ urlpatterns = [
 
 
     path("my-posts/", my_posts, name="my_posts"),
+
+    
+    path("lesson7/", PostListView.as_view(), name="l7_post_list"),
+    path("lesson7/post/create/", PostCreateView.as_view(), name="l7_create_post"),
+    path("lesson7/post/<int:pk>/edit", UpdatePostView.as_view(), name="l7_edit_post"),
+    path("lesson7/post/<int:pk>/delete", PostDeleteView.as_view(), name="l7_delete_post"),
+    path("lesson7/post/<int:id>", PostDetailView.as_view(), name="l7_post_detail"),
 ]
 
 
